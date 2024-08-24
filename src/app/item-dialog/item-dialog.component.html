@@ -1,1 +1,35 @@
-<p>item-dialog works!</p>
+<div class="item-dialog-container">
+  <h2 mat-dialog-title>{{ data ? 'Edit Item' : 'Create New' }}</h2>
+  <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+    <header>
+
+      <div>
+        <div>Name</div>
+        <input formControlName="title" placeholder="Type tag name...">
+      </div>
+
+      <div>
+        <div>Color</div>
+        <input formControlName="color" type="color">
+      </div>
+
+    </header>
+
+    <div>
+      <div>Tag Description</div>
+      <textarea formControlName="description" placeholder="Type tag description"></textarea>
+    </div>
+
+
+    <div>
+      <div>Creator</div>
+      <input formControlName="createdBy" placeholder="Enter creator's name">
+    </div>
+
+    <footer>
+      <button type="button" (click)="onCancel()">Cancel</button>
+      <button type="submit" [disabled]="itemForm.invalid">{{ data ? 'Update' : 'Create' }}</button>
+    </footer>
+  </form>
+
+</div>

@@ -1,5 +1,24 @@
-<main class="main">
-  <router-outlet />
+<main class="app-main">
+
+  <section class="managment-box">
+
+    <div class="unnamed-character-style-6">Management Tool</div>
+
+    <section class="buttons-section">
+      <button (click)="viewMode = 'card'"><img src="TilesMode.svg" alt="lsit view"></button>
+      <button (click)="viewMode = 'list'"><img src="ListMode.svg" alt="tile view"></button>
+      <button class="big-btn" (click)="openDialog()"><img src="CreateNew.svg" alt="create new item"></button>
+    </section>
+
+  </section>
+
+  <app-input-search/>
+
+  <ng-container *ngIf="viewMode === 'list'">
+    <app-list-view/>
+  </ng-container>
+  <ng-container *ngIf="viewMode === 'card'">
+    <app-card-view/>
+  </ng-container>
+
 </main>
-
-
