@@ -1,34 +1,37 @@
 <div class="item-dialog-container">
-  <h2 mat-dialog-title>{{ data ? 'Edit Item' : 'Create New' }}</h2>
+  <div class="unnamed-character-style-6 title-header">{{ data ? 'Edit Item' : 'Create New' }}</div>
   <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
     <header>
 
-      <div>
-        <div>Name</div>
+      <div class="input-title-wrapper">
+        <div class="input-title">Name</div>
         <input formControlName="title" placeholder="Type tag name...">
       </div>
 
-      <div>
-        <div>Color</div>
-        <input formControlName="color" type="color">
+      <div class="input-title-wrapper-color">
+        <div class="input-title">Color</div>
+        <input class="color-input" formControlName="color" type="color">
       </div>
 
     </header>
 
-    <div>
-      <div>Tag Description</div>
-      <textarea formControlName="description" placeholder="Type tag description"></textarea>
-    </div>
+    <main>
+      <div class="input-title-wrapper">
+        <div class="input-title">Tag Description</div>
+        <textarea formControlName="description" placeholder="Type tag description"></textarea>
+      </div>
 
 
-    <div>
-      <div>Creator</div>
-      <input formControlName="createdBy" placeholder="Enter creator's name">
-    </div>
+      <div class="input-title-wrapper">
+        <div class="input-title">Creator</div>
+        <input formControlName="createdBy" placeholder="Enter creator's name">
+      </div>
+    </main>
+
 
     <footer>
-      <button type="button" (click)="onCancel()">Cancel</button>
-      <button type="submit" [disabled]="itemForm.invalid">{{ data ? 'Update' : 'Create' }}</button>
+      <button class="cancel" type="button" (click)="onCancel()">Cancel</button>
+      <button class="save" type="submit" [disabled]="itemForm.invalid">{{ data ? 'Update' : 'Create' }}</button>
     </footer>
   </form>
 

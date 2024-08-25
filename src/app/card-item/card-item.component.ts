@@ -1,5 +1,6 @@
 import { Component , Input} from '@angular/core';
 import {DatePipe} from "@angular/common";
+import {Data} from "../data.model";
 
 @Component({
   selector: 'app-card-item',
@@ -9,5 +10,5 @@ import {DatePipe} from "@angular/common";
   styleUrl: './card-item.component.css'
 })
 export class CardItemComponent {
-  @Input() item: any;
+  @Input() item: Data | undefined;
 }

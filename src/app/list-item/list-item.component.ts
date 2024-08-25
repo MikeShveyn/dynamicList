@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import {DatePipe} from "@angular/common";
+import {Data} from "../data.model";
 
 @Component({
   selector: 'app-list-item',
@@ -9,5 +10,5 @@ import {DatePipe} from "@angular/common";
   styleUrl: './list-item.component.css'
 })
 export class ListItemComponent {
-  @Input() item: any;
+  @Input() item: Data | undefined;
 }

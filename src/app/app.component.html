@@ -14,11 +14,11 @@
 
   <app-input-search/>
 
-  <ng-container *ngIf="viewMode === 'list'">
+  <div class="list-wrapper" *ngIf="viewMode === 'list'">
     <app-list-view/>
-  </ng-container>
-  <ng-container *ngIf="viewMode === 'card'">
+  </div>
+  <div class="list-wrapper" *ngIf="viewMode === 'card'">
     <app-card-view/>
-  </ng-container>
+  </div>
 
 </main>

@@ -6,8 +6,6 @@ import {SignalsService} from "./services/signals.service";
 import {MatDialog} from "@angular/material/dialog";
 import {NgIf} from "@angular/common";
 import {InputSearchComponent} from "./input-search/input-search.component";
-import {DataService} from "./services/data.service";
-
 
 @Component({
   selector: 'app-root',
@@ -21,9 +19,8 @@ export class AppComponent {
   viewMode : "list" | "card" = "list"
 
   constructor(private signalService: SignalsService,
-              private dataService: DataService,
               private dialog : MatDialog) {
-    this.dataService.loadData();
+    this.signalService.loadData();
   }
 
   openDialog(): void {
